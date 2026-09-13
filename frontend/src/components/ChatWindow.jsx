@@ -69,17 +69,23 @@ const ChatWindow = ({ activeChat, isLoading, onSend }) => {
                         onKeyDown={handleKeyDown}
                     />
                     <div className="action-row">
-                        <select
-                            className="language-select"
-                            value={language}
-                            onChange={(e) => setLanguage(e.target.value)}
-                        >
-                            <option value="Python">Python</option>
-                            <option value="JavaScript">JavaScript</option>
-                            <option value="Java">Java</option>
-                            <option value="C++">C++</option>
-                            <option value="Go">Go</option>
-                        </select>
+                        <div className="language-selector-group">
+                            <label htmlFor="language-select" className="language-select-label">
+                                Choose language:
+                            </label>
+                            <select
+                                id="language-select"
+                                className="language-select"
+                                value={language}
+                                onChange={(e) => setLanguage(e.target.value)}
+                            >
+                                <option value="Python">Python</option>
+                                <option value="JavaScript">JavaScript</option>
+                                <option value="Java">Java</option>
+                                <option value="C++">C++</option>
+                                <option value="Go">Go</option>
+                            </select>
+                        </div>
                         <button
                             className="send-button"
                             onClick={handleSend}
