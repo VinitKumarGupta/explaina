@@ -48,14 +48,19 @@ const Sidebar = ({
             }
         };
         document.addEventListener("mousedown", handleClickOutside);
-        return () => document.removeEventListener("mousedown", handleClickOutside);
+        return () =>
+            document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
     return (
         <div className={`sidebar ${isOpen ? "open" : ""}`}>
             <div className="sidebar-header">
                 <div className="sidebar-brand">
-                    <img src="/favicon.png" alt="Explaina Logo" className="sidebar-logo" />
+                    <img
+                        src="/favicon.webp"
+                        alt="Explaina Logo"
+                        className="sidebar-logo"
+                    />
                     <h2 className="brand-gradient-text">Explaina</h2>
                 </div>
                 <button
@@ -78,11 +83,14 @@ const Sidebar = ({
                     </svg>
                 </button>
             </div>
-            <button 
-                className="new-chat-button" 
+            <button
+                className="new-chat-button"
                 onClick={onNewChat}
                 disabled={isLoading}
-                style={{ opacity: isLoading ? 0.6 : 1, cursor: isLoading ? "not-allowed" : "pointer" }}
+                style={{
+                    opacity: isLoading ? 0.6 : 1,
+                    cursor: isLoading ? "not-allowed" : "pointer",
+                }}
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -102,9 +110,7 @@ const Sidebar = ({
                 New Problem
             </button>
             <div className="chat-history-list">
-                {chats.length === 0 && (
-                    <p className="no-chats-msg">History</p>
-                )}
+                {chats.length === 0 && <p className="no-chats-msg">History</p>}
 
                 {chats.map((chat) => (
                     <div
@@ -123,11 +129,14 @@ const Sidebar = ({
                                 onClick={(e) => e.stopPropagation()}
                             />
                         ) : (
-                            <span className="chat-title-text" title={chat.title}>
+                            <span
+                                className="chat-title-text"
+                                title={chat.title}
+                            >
                                 {chat.title || "New Chat..."}
                             </span>
                         )}
-                        
+
                         {!editingChatId && (
                             <div className="chat-actions">
                                 <span
@@ -185,9 +194,22 @@ const Sidebar = ({
             <div className="sidebar-account-container" ref={menuRef}>
                 {isMenuOpen && (
                     <div className="sidebar-account-dropup">
-                        <button className="sidebar-dropup-item sidebar-logout-item" onClick={onLogout}>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.8} stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                        <button
+                            className="sidebar-dropup-item sidebar-logout-item"
+                            onClick={onLogout}
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                strokeWidth={1.8}
+                                stroke="currentColor"
+                            >
+                                <path
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75"
+                                />
                             </svg>
                             Log out
                         </button>
@@ -201,8 +223,19 @@ const Sidebar = ({
                         {(userEmail || "").charAt(0).toUpperCase()}
                     </div>
                     <span className="sidebar-account-email">{userEmail}</span>
-                    <svg className={`sidebar-account-chevron ${isMenuOpen ? "open" : ""}`} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 15.75l7.5-7.5 7.5 7.5" />
+                    <svg
+                        className={`sidebar-account-chevron ${isMenuOpen ? "open" : ""}`}
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth={2}
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M4.5 15.75l7.5-7.5 7.5 7.5"
+                        />
                     </svg>
                 </button>
             </div>
