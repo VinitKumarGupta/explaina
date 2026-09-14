@@ -1,4 +1,4 @@
-# <img src="frontend/public/favicon.png" alt="Explaina Logo" width="32" height="32" style="vertical-align: middle; margin-right: 8px;" /> Explaina
+# <img src="frontend/public/favicon.png" alt="Explaina Logo" width="38" height="38" style="vertical-align: middle; margin-right: 8px;" /> Explaina
 
 An AI-assisted technical interview preparation tool that converts coding and algorithm problems into structured, interview-ready breakdowns.
 
