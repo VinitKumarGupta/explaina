@@ -54,7 +54,10 @@ const Sidebar = ({
     return (
         <div className={`sidebar ${isOpen ? "open" : ""}`}>
             <div className="sidebar-header">
-                <h2 className="brand-gradient-text">Explaina</h2>
+                <div className="sidebar-brand">
+                    <img src="/favicon.png" alt="Explaina Logo" className="sidebar-logo" />
+                    <h2 className="brand-gradient-text">Explaina</h2>
+                </div>
                 <button
                     className="sidebar-close-btn"
                     onClick={onClose}

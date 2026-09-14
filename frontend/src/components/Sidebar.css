@@ -25,10 +25,24 @@
     border-bottom: 1px solid var(--border-subtle);
 }
 
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.sidebar-logo {
+    width: 28px;
+    height: 28px;
+    border-radius: var(--radius-sm);
+    object-fit: contain;
+}
+
+.sidebar-header h2,
 .sidebar-header h3 {
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 .sidebar-close-btn {
