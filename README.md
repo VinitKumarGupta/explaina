@@ -45,7 +45,7 @@ General-purpose conversational AI models typically return unpredictable formats,
             +--------------------+     +-----------------------+
 ```
 
-- **Frontend**: React 19 single-page application built with Vite, utilizing Tailwind CSS for layout, Axios for API calls, and Markdown syntax highlighting (`rehype-highlight`).
+- **Frontend**: React 19 single-page application built with Vite, using Axios for API calls, React Markdown for rendered explanations, and `react-syntax-highlighter` for code blocks.
 - **Backend**: Node.js / Express REST API serving authentication and chat endpoints.
 - **Database**: MongoDB (Mongoose ODM) storing user profiles and query history.
 - **Authentication**: Dual authentication via JSON Web Tokens (JWT) with bcrypt password hashing, alongside Google OAuth 2.0 via Passport.js.
@@ -107,13 +107,12 @@ General-purpose conversational AI models typically return unpredictable formats,
 
 ### Chat & Explanations
 
-| Method   | Endpoint            | Description                                                  |
-| -------- | ------------------- | ------------------------------------------------------------ |
-| `POST`   | `/api/chat/create`  | Submits a DSA problem query and returns generated analysis.  |
-| `GET`    | `/api/chat/history` | Retrieves stored explanation history for authenticated user. |
-| `GET`    | `/api/chat/:id`     | Retrieves a specific explanation by ID.                      |
-| `PUT`    | `/api/chat/:id`     | Updates an explanation title.                                |
-| `DELETE` | `/api/chat/:id`     | Deletes an explanation record.                               |
+| Method   | Endpoint               | Description                                                  |
+| -------- | ---------------------- | ------------------------------------------------------------ |
+| `POST`   | `/api/chat/create`     | Submits a DSA problem query and returns generated analysis.  |
+| `GET`    | `/api/chat/all`        | Retrieves stored explanation history for authenticated user. |
+| `PATCH`  | `/api/chat/:id/rename` | Updates an explanation title.                                |
+| `DELETE` | `/api/chat/:id`        | Deletes an explanation record.                               |
 
 ---
 
